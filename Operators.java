@@ -7,11 +7,9 @@ public class Operators {
 		int b=10; 
 		int c=20;
 		int d=5;
-		System.out.println(a++ + ++a);//10+12=22  
-		System.out.println(b++ + b++);//10+11=21  
-		
-		
-		//Unary Operator Pre 
+		System.out.println(a++ + ++a);  
+		System.out.println(b++ + b++);
+		 //unary operator pre
 		boolean e=true;  
 		boolean f=false;  
 		System.out.println(~a);  
@@ -33,10 +31,10 @@ public class Operators {
 		System.out.println(10>>2);
 		
 		//Logical && and Bitwise &
-		System.out.println(a<b&&a<c);//false && true = false  
-		System.out.println(a<b&a<c);//false & true = false 
-		System.out.println(a>b||a<c);//true || true = true
-		System.out.println(a>b||a++<c);//true || true = true  
+		System.out.println(a<b&&a<c);  
+		System.out.println(a<b&a<c);/
+		System.out.println(a>b||a<c);
+		System.out.println(a>b||a++<c);
 		
 		
 		//Assignment Operator\
