@@ -2,6 +2,7 @@
 Q4)Write aprogram to create online food order system
 */
 
+//-----------------------Program---------------------
 
 import java.util.Scanner;
 public class hotel_management {
