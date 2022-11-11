@@ -2,7 +2,7 @@
 Write a program to accept 5 students record from the user and calculate the grade and percentage. (accept name, roll_no, Marks of 5 Subject) 
 Perform by using array and function
 */
-public class HW1 {
+public class Student_record {
 
 	String name;
 	int roll,i,sum,per;
@@ -11,10 +11,10 @@ public class HW1 {
 	
 	public static void main(String[] args) 
 	{
-		HW1[] obj=new HW1[5];
+		Student_record[] obj=new Student_record[5];
 		for(int i=0;i<5;i++)
 		{
-			obj[i]=new HW1();
+			obj[i]=new Student_record1();
 			obj[i].accept();
 		}
 		System.out.println("All the data is :");
