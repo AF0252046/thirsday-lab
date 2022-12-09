@@ -1,0 +1,119 @@
+/*
+	QUESTION:
+
+         WAP to display prime no between 1 to 1000, armstrongno between 1 to 1000,
+         accept a number from the user and then outputs the number with the digits reversed.
+         For example, if the input is 12345, the output should be 54321.
+         using (Abstraction , Interface).
+*/
+
+// first class (Abstract class) for prime number and armstrong number
+
+package thursday_questions;
+
+public abstract class Abs_Clas {
+	public abstract void PN();  
+		public void PrimeNum() // for prime number
+		{
+			
+		}
+	public abstract void Aramstrong_num();
+		public void ArmstrongNum()  // for Armstrong Number
+		{
+			
+		}
+	
+
+}
+
+// Secend Class (interface class) for Reverse Number
+
+package thursday_questions;
+
+public interface Reverse_n
+{
+	public void ReverseNum(); // for reverse number
+}
+
+// Third Class for final output
+
+package thursday_questions;
+
+import java.util.Scanner;
+
+public class Output_PAR extends Abs_Clas implements Reverse_n {
+	
+	public static void main(String[]args)
+	{
+		Output_PAR obj=new Output_PAR();
+		obj.PN();
+		obj.Aramstrong_num();
+		obj.ReverseNum();
+	}
+
+	@Override
+	public void ReverseNum() {
+		// TODO Auto-generated method stub
+		 int m, n, sum = 0;
+	        Scanner sc= new Scanner(System.in);
+	        System.out.print("\nEnter the number:");
+	        m = sc.nextInt();
+	        while(m > 0)
+	        {
+	            n = m % 10;
+	            sum = sum * 10 + n;
+	            m = m / 10;
+	        }
+	        System.out.println("Reverse:"+sum);
+
+
+	}
+		
+
+	@Override
+	public void PN() {
+		// TODO Auto-generated method stub
+
+		int i , j, c=0 ;
+		System.out.println("Prime number between 1 to 1000 Are : ");
+
+		for( i=1 ; i<=1000; i++)
+		{
+		for( j=1 ; j<=i ; j++)
+		{
+		if ( i%j ==0)
+			c++;
+		}
+		if ( c==2)
+		System.out.println( + i);
+			c=0;
+
+		}	
+	}
+
+	@Override
+	public void Aramstrong_num() {
+		// TODO Auto-generated method stub
+		int n, a, b,  sum = 0;
+        System.out.print("Armstrong numbers from 1 to 1000:");
+        for(int i = 1; i <= 1000; i++)
+        {
+            n = i;
+            while(n > 0)
+            {
+                b = n % 10;
+                sum = sum + (b * b * b);
+                n = n / 10;
+            }
+            if(sum == i)
+            {
+                System.out.println(i+" ");
+            }
+            sum = 0;
+	}		
+    }
+}
+
+
+
+
