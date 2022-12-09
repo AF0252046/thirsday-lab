@@ -1,0 +1,115 @@
+/*
+WAP to perform the following operation :
+Area of circle (π*r*r)
+Area of rectangle(l*b)
+Area of cylendar((π*r*r)*h)
+Area of Square (s*s)
+
+	 **POLYMORPHISM**
+*/
+
+// First Class for finding Area of circle
+
+package polymorph;
+
+import java.util.Scanner;
+
+public class circle_calculation {
+	Scanner sc=new Scanner(System.in); // for user input
+	int r,s,l,b,h;
+	float pi=3.14f;
+	float res;
+	public void area()
+	{
+		System.out.println("Enter thr value of radius R: ");
+		r=sc.nextInt();
+		res =pi*r*r;	// formula for Area of circle
+		System.out.println("The Area of circlr is = "+res);
+	}
+
+}
+
+
+// second class for finding area of Square
+
+package polymorph;
+
+public class Square_calc extends circle_calculation
+{
+	
+	public void area() 
+	{
+		System.out.println("Enter The value Of side of square (s): ");
+		s=sc.nextInt();
+		res=s*s;	//formula for Area of Square
+		System.out.println("The Area of Square is: "+res);
+		
+	}
+}
+
+// Third Class for finding area of Rectangle
+
+package polymorph;
+
+public class Rect_calc extends circle_calculation { // inherits the properties of class circle_calculation
+	public void area()
+	{
+		System.out.println("Enter the length of rectangle of (L): ");
+		l=sc.nextInt();
+		System.out.println("Enter the Breadth of rectangle (B): ");
+		b=sc.nextInt();
+		res=l*b;	//formula for Area of Rectangle
+		
+		System.out.println("The area of rectangle is: "+res);
+	}
+
+}
+
+// Fourth class for finding area of Cylender
+
+package polymorph;
+
+public class cylender_calc extends circle_calculation { //inherits the properties of class circle_calculation
+	public void area()
+	{
+		System.out.println("Enter the Value of radius (r): ");
+		r=sc.nextInt();
+		System.out.println("Enter the value of height (h): ");
+		h=sc.nextInt();
+		res=(pi*r*r)*h;	//formula for Area of Cylender
+		System.out.println("The Area of cylender is: "+res);
+	}
+	
+
+}
+
+// fifth class for the final output
+
+package polymorph;
+
+public class result_area {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		circle_calculation obj=new circle_calculation();
+		circle_calculation obj1=new Square_calc();
+		circle_calculation obj2=new Rect_calc();
+		circle_calculation obj3=new cylender_calc();
+		obj.area();
+		obj1.area();
+		obj2.area();
+		obj3.area();
+		
+
+	}
+
+}
+
+									***
+
+
+
+
+
+
+ 
