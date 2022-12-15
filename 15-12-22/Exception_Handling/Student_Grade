@@ -1,0 +1,94 @@
+/*
+   QUESTION
+   Write A program to create an user defined exception for the grade of a student.
+  */
+  
+  //User Define Exception Class
+  
+  package Exceptionhandle;
+
+public class Userdefine_exception extends Exception 
+	
+	{
+		Userdefine_exception(String MSG)  // Using constructor for super class
+		{
+			super(MSG);
+		}
+	}
+
+-----------------------------------
+// New class for executing program
+
+package Exceptionhandle;
+
+import java.util.Scanner;
+
+public class Student_Grad {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try
+		{
+		Studgrade();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+
+	}
+	public static void Studgrade() throws Userdefine_exception  // using throws keyword for use signature of exception
+	{
+		int i,Rollno,total=0,per;
+		String Studname;
+		int [] marks=new int[5];
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Your Name");
+		Studname=sc.next();
+		System.out.println("Enter Your Roll No.");
+		Rollno=sc.nextInt();
+		System.out.println("Enter Marks of five student");
+		for(i=0;i<5;i++)
+		{
+				marks[i]=sc.nextInt();
+				total+=marks[i];
+		}
+		System.out.println("The total out of 500 = "+total);
+		per=(total*100)/500;
+		System.out.println("you got "+per+"%");
+		if(per>90 && per<=100)
+		{
+			System.out.println("O Grade");
+		}
+		else if(per>=80 && per<=89)
+		{
+			System.out.println("A Grade");
+		}
+		else if(per>=70 && per<=79)
+		{
+			System.out.println("B Grade");
+		}
+		else if(per>=60 && per<=69)
+		{
+			System.out.println("C Grade");
+		}
+		else if(per>=50 && per<=59)
+		{
+			System.out.println("D Grade");
+		}
+		else if(per>=35 && per<=49)
+		{
+			System.out.println("E Grade");
+		}
+		else if(per>100)
+		{
+			throw new Userdefine_exception("Percentage Should Not br greater than 100."); //userdefine exception using
+		}
+		else
+		{
+			throw new Userdefine_exception("You Are Fail!!.");
+		}
+		
+	}
+
+}
